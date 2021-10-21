@@ -1,0 +1,34 @@
+﻿grammar ExpressionGrammar;
+
+compileUnit : expression EOF;
+
+expression: LPAREN expression RPAREN  #ParenthesizedExpression
+			| expression EXPONENT expression #ExponentExpression
+			| expression MOD expression  #ModExpression
+			| expression DIV expression  #DivExpression
+			| expression DIVIDE expression #DivideExpression
+			| expression MULTIPLY expression #MultiplyExpression
+			| expression PLUS expression #AddExpression
+			| expression MINUS expression #SubtractExpression
+			| MINUS expression  #MinusExpression
+			| PLUS expression  #PlusExpression
+			| NUMBER #NumberExpression
+			| IDENTIFIER #IdentifierExpression;
+
+NUMBER: INT ('.'INT)?;
+
+IDENTIFIER: [A-Z]+[0-9][0-9]*;
+
+INT: [0-9]+;
+
+EXPONENT: '^';
+PLUS: '+';
+MINUS: '-';
+DIVIDE: '/';
+MULTIPLY: '*';
+LPAREN: '(';
+RPAREN: ')';
+MOD: 'mod';
+DIV: 'div';
+
+WS : [ \t\r\n] -> channel(HIDDEN);
