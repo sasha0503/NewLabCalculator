@@ -18,7 +18,7 @@ namespace LabCalculator
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            form1 = new Form1();
+            form1 = new Form1(10, 18);
             Application.Run(form1);
         }
     }
