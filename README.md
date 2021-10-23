@@ -1,3 +1,4 @@
 # NewLabCalculator
 
-A simple copy of Excel
+Перша лабораторна робота з ООП
+Варіант 1
