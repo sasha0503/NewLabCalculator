@@ -8,8 +8,8 @@ expression: LPAREN expression RPAREN  #ParenthesizedExpression
 			| expression DIV expression  #DivExpression
 			| expression DIVIDE expression #DivideExpression
 			| expression MULTIPLY expression #MultiplyExpression
-			| expression PLUS expression #AddExpression
 			| expression MINUS expression #SubtractExpression
+			| expression PLUS expression #AddExpression
 			| MINUS expression  #MinusExpression
 			| PLUS expression  #PlusExpression
 			| NUMBER #NumberExpression
